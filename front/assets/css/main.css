@@ -1,0 +1,58 @@
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: bisque;
+}
+body header {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  top: 1%;
+  right: 1%;
+  z-index: 1;
+}
+body main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed !important;
+}
+body main #canvas {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 40%;
+  left: 0%;
+  z-index: 1;
+  pointer-events: none;
+}
+body main svg {
+  width: 100%;
+  height: 100%;
+}
+body main svg #wave,
+body main svg #heyazah,
+body main svg #lex,
+body main svg #skyline,
+body main svg #business-yard {
+  cursor: pointer;
+}
+body main svg #wave:hover path,
+body main svg #heyazah:hover path,
+body main svg #lex:hover path,
+body main svg #skyline:hover path,
+body main svg #business-yard:hover path {
+  transition: all 0.3s ease-in-out;
+  fill: rgb(37, 37, 37);
+}
+
+/*# sourceMappingURL=main.css.map */

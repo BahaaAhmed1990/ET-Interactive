@@ -1,0 +1,59 @@
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: bisque;
+
+  header {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: 1%;
+    right: 1%;
+    z-index: 1;
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed !important;
+
+    #canvas {
+      position: absolute;
+      top: 10%;
+      width: 100%;
+      height: 40%;
+      left: 0%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+
+      #wave,
+      #heyazah,
+      #lex,
+      #skyline,
+      #business-yard {
+        cursor: pointer;
+
+        &:hover {
+          path {
+            transition: all 0.3s ease-in-out;
+            fill: rgb(37, 37, 37);
+          }
+        }
+      }
+    }
+  }
+}

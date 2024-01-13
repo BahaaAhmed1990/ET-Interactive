@@ -1,0 +1,574 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:active {
+  color: yellow;
+}
+
+a:hover {
+  color: #a99929;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+}
+body #loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 49, 50, 0.29);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #loader .loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #b02594;
+  --_m: conic-gradient(#0000 10%, #000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+body #modal {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+  transition: all 0.7s ease-in-out;
+}
+body #modal .close-modal {
+  text-align: end;
+  position: absolute;
+  right: 1%;
+  top: 3%;
+  z-index: 8;
+}
+body #modal .modal-content {
+  background-color: rgba(240, 248, 255, 0.4392156863);
+  width: 100%;
+  height: 100%;
+}
+body #modal .modal-content .modal-video {
+  display: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body #modal .modal-content .render-image {
+  display: none;
+  position: relative;
+  justify-content: center;
+  height: 94%;
+  /* Next & previous buttons */
+  /* Position the "prev button" to the right */
+  /* Position the "next button" to the right */
+  /* On hover, add a black background color with a little bit see-through */
+  /* Fading animation */
+}
+body #modal .modal-content .render-image .mySlides {
+  display: none;
+  border: 4px solid #ccc;
+  border-radius: 4px;
+}
+body #modal .modal-content .render-image .prev,
+body #modal .modal-content .render-image .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+body #modal .modal-content .render-image .prev {
+  left: 0;
+}
+body #modal .modal-content .render-image .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+body #modal .modal-content .render-image .prev:hover,
+body #modal .modal-content .render-image .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body #modal .modal-content .render-image .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body #modal .modal-content .project-profile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+}
+@media (max-width: 570px) {
+  body #modal .modal-content .project-profile {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body #modal .modal-content .project-profile {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+body #modal .modal-content .project-profile .publuuflip {
+  margin-left: 140px;
+  margin-top: 40px;
+}
+@media (max-width: 570px) {
+  body #modal .modal-content .project-profile .publuuflip {
+    margin: 0;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body #modal .modal-content .project-profile .publuuflip {
+    margin: 0;
+  }
+}
+body main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+body main section {
+  height: 100%;
+}
+body main #bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+body main #image-2d {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed !important;
+  overflow: hidden;
+  z-index: 5;
+}
+@media (max-width: 570px) {
+  body main #image-2d {
+    overflow: scroll;
+  }
+}
+body main #image-2d #canvas {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 40%;
+  left: 0%;
+  pointer-events: none;
+}
+body main #image-2d svg {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 570px) {
+  body main #image-2d svg {
+    width: auto;
+    height: auto;
+  }
+}
+body main #image-2d svg #heyazah path {
+  fill: rgb(37, 37, 37);
+}
+body main #image-2d svg #wave,
+body main #image-2d svg #heyazah,
+body main #image-2d svg #lex,
+body main #image-2d svg #skyline,
+body main #image-2d svg #business-yard {
+  cursor: pointer;
+}
+body main #image-2d svg #wave:hover path,
+body main #image-2d svg #heyazah:hover path,
+body main #image-2d svg #lex:hover path,
+body main #image-2d svg #skyline:hover path,
+body main #image-2d svg #business-yard:hover path {
+  transition: all 0.3s ease-in-out;
+  fill: rgb(37, 37, 37);
+}
+body main #logos {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+}
+body main #logos div:first-child {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+body main #logos div:first-child img {
+  height: 76px;
+}
+body main #logos div:last-child {
+  margin-right: 20px;
+  margin-top: 20px;
+}
+body main #logos div:last-child img {
+  height: 88px;
+}
+body main #surrounding-nav {
+  display: none;
+  position: absolute;
+  height: 15%;
+  bottom: 8.5%;
+  width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  z-index: 5;
+}
+body main #surrounding-nav .title {
+  padding-left: 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+body main #surrounding-nav .title h3 {
+  margin-left: 28px;
+}
+body main #surrounding-nav .title button {
+  font-size: 9px;
+  color: #000;
+  width: 30px;
+  height: 20px;
+  margin-right: 10px;
+}
+body main #surrounding-nav .sub-nav {
+  background-color: rgba(1, 4, 15, 0.5);
+  padding: 8px 25px;
+}
+body main #surrounding-nav .sub-nav a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 1em 1em;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.34);
+  margin-right: 8px;
+}
+body main #aminities {
+  display: none;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  bottom: 8.5%;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+}
+@media (max-width: 570px) {
+  body main #aminities {
+    height: 25%;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #aminities {
+    height: 23%;
+  }
+}
+body main #aminities .title {
+  padding-left: 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+body main #aminities .title h3 {
+  margin-left: 28px;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin-bottom: 3px;
+}
+@media (max-width: 570px) {
+  body main #aminities .title h3 {
+    margin-left: 0;
+  }
+}
+body main #aminities .title button {
+  font-size: 9px;
+  color: #000;
+  width: 30px;
+  height: 20px;
+  margin-right: 10px;
+  align-self: center;
+}
+body main #aminities .sub-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 26px;
+  padding-bottom: 4px;
+  background-color: rgba(1, 4, 15, 0.5);
+  font-size: 10px;
+}
+@media (min-width: 1980px) {
+  body main #aminities .sub-nav {
+    font-size: 14px;
+  }
+}
+@media (max-width: 570px) {
+  body main #aminities .sub-nav {
+    font-size: 8px;
+    padding-left: 13px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #aminities .sub-nav {
+    font-size: 9px;
+  }
+}
+body main #aminities .sub-nav .elevations,
+body main #aminities .sub-nav .enterance,
+body main #aminities .sub-nav .landscape {
+  width: 13%;
+}
+@media (max-width: 570px) {
+  body main #aminities .sub-nav .elevations,
+  body main #aminities .sub-nav .enterance,
+  body main #aminities .sub-nav .landscape {
+    width: 33%;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #aminities .sub-nav .elevations,
+  body main #aminities .sub-nav .enterance,
+  body main #aminities .sub-nav .landscape {
+    width: 33%;
+  }
+}
+body main #aminities .sub-nav h4 {
+  padding-left: 8px;
+  font-size: 12px;
+  background-color: rgba(194, 194, 194, 0.231372549);
+  width: 84%;
+  border-radius: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+  font-family: system-ui;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+@media (min-width: 1980px) {
+  body main #aminities .sub-nav h4 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 570px) {
+  body main #aminities .sub-nav h4 {
+    font-size: 12px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #aminities .sub-nav h4 {
+    font-size: 12px;
+  }
+}
+body main #aminities .sub-nav li {
+  width: 83%;
+  background-color: rgba(0, 0, 0, 0.34);
+  margin-bottom: 2px;
+  padding-left: 8px;
+  border-radius: 4px;
+  font-weight: lighter;
+  font-family: system-ui;
+}
+body main #navbar {
+  position: absolute;
+  height: 5%;
+  bottom: 2%;
+  background-color: rgba(1, 4, 15, 0.5);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+@media (max-width: 570px) {
+  body main #navbar {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #navbar {
+    width: 529px;
+    bottom: 0.5%;
+  }
+}
+body main #navbar .nav-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-left: rgba(0, 0, 0, 0);
+  padding: 1em;
+  transition: all 0.3s ease-in-out;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+@media (min-width: 1980px) {
+  body main #navbar .nav-link {
+    font-size: 18px;
+  }
+}
+@media (max-width: 570px) {
+  body main #navbar .nav-link {
+    font-size: 7px;
+    padding: 0.5em;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #navbar .nav-link {
+    font-size: 10px;
+  }
+}
+body main #navbar .nav-link:hover {
+  color: #a99929;
+}
+body main #navbar .nav-link i {
+  display: inline-block;
+  margin-right: 6px;
+}
+@media (max-width: 570px) {
+  body main #navbar .nav-link i svg {
+    width: 10px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #navbar .nav-link i svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+@media (max-width: 570px) {
+  body main #navbar .nav-link i {
+    display: inline-block;
+    margin-right: 2px;
+    transform: translateY(4px);
+  }
+}
+body main #navbar .gallery-submenu {
+  display: none;
+  position: absolute;
+  top: -163%;
+}
+@media (min-width: 1980px) {
+  body main #navbar .gallery-submenu {
+    top: -246%;
+  }
+}
+@media (max-width: 570px) {
+  body main #navbar .gallery-submenu {
+    top: -345%;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #navbar .gallery-submenu {
+    top: -261%;
+  }
+}
+body main #navbar .gallery-submenu a {
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.2509803922);
+  width: 100%;
+  padding: 5px 14px;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+@media (min-width: 1980px) {
+  body main #navbar .gallery-submenu a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 570px) {
+  body main #navbar .gallery-submenu a {
+    text-transform: capitalize;
+    font-size: 6px;
+    padding: 10.5px 2px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body main #navbar .gallery-submenu a {
+    text-transform: capitalize;
+    font-size: 9px;
+    padding: 10.5px 2px;
+  }
+}
+
+/*# sourceMappingURL=heyaza.css.map */

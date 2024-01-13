@@ -1,0 +1,20 @@
+{
+  "name": "et-interactive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass --watch front/scss:front/assets/css",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "sass": "^1.69.6"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

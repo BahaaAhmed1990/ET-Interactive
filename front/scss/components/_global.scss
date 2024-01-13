@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+button:hover {
+  cursor: pointer;
+}
+ul li:hover {
+  cursor: pointer;
+}
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:active {
+  color: yellow;
+}
+a:hover {
+  color: #a99929;
+}
