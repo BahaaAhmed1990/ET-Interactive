@@ -221,6 +221,20 @@ body main #image-2d #canvas {
   left: 0%;
   pointer-events: none;
 }
+body main #image-2d .trademark {
+  position: absolute;
+  bottom: 1%;
+  right: 3%;
+  font-size: 12px;
+  color: black;
+  font-weight: 900;
+  font-family: cursive;
+  text-align: center;
+}
+body main #image-2d .trademark a {
+  text-decoration: none;
+  color: black;
+}
 body main #image-2d svg {
   width: 100%;
   height: 100%;
@@ -231,15 +245,19 @@ body main #image-2d svg {
     height: auto;
   }
 }
-body main #image-2d svg #heyazah path {
-  fill: rgb(37, 37, 37);
-}
 body main #image-2d svg #wave,
 body main #image-2d svg #heyazah,
 body main #image-2d svg #lex,
 body main #image-2d svg #skyline,
 body main #image-2d svg #business-yard {
   cursor: pointer;
+}
+body main #image-2d svg #wave.active path,
+body main #image-2d svg #heyazah.active path,
+body main #image-2d svg #lex.active path,
+body main #image-2d svg #skyline.active path,
+body main #image-2d svg #business-yard.active path {
+  fill: rgb(37, 37, 37);
 }
 body main #image-2d svg #wave:hover path,
 body main #image-2d svg #heyazah:hover path,
@@ -262,9 +280,6 @@ body main #logos {
 body main #logos div:first-child {
   margin-left: 20px;
   margin-top: 20px;
-}
-body main #logos div:first-child img {
-  height: 76px;
 }
 body main #logos div:last-child {
   margin-right: 20px;
@@ -387,20 +402,23 @@ body main #aminities .sub-nav {
 }
 body main #aminities .sub-nav .elevations,
 body main #aminities .sub-nav .enterance,
-body main #aminities .sub-nav .landscape {
+body main #aminities .sub-nav .landscape,
+body main #aminities .sub-nav .street-view {
   width: 13%;
 }
 @media (max-width: 570px) {
   body main #aminities .sub-nav .elevations,
   body main #aminities .sub-nav .enterance,
-  body main #aminities .sub-nav .landscape {
+  body main #aminities .sub-nav .landscape,
+  body main #aminities .sub-nav .street-view {
     width: 33%;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
   body main #aminities .sub-nav .elevations,
   body main #aminities .sub-nav .enterance,
-  body main #aminities .sub-nav .landscape {
+  body main #aminities .sub-nav .landscape,
+  body main #aminities .sub-nav .street-view {
     width: 33%;
   }
 }
@@ -544,10 +562,10 @@ body main #navbar .gallery-submenu a {
   display: inline-block;
   color: white;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 9px;
   background-color: rgba(0, 0, 0, 0.2509803922);
   width: 100%;
-  padding: 5px 14px;
+  padding: 9px 14px;
   font-family: sans-serif;
   text-decoration: none;
 }
