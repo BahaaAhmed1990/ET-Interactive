@@ -34,7 +34,7 @@ home.addEventListener("click", function (e) {
   gallerySubMenu.style.display = "none";
   gallerySubMenu.classList.remove("active");
   frame.src =
-    "https://kuula.co/share/518JR?logo=-1&info=0&fs=0&vr=1&zoom=1&gyro=0&thumbs=1";
+    "https://heyazah.viewin360.co/share/5DhN4?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=0&inst=0&keys=0";
 });
 
 [...aminitiesLinks].map((link) => {
@@ -66,7 +66,7 @@ landscape.addEventListener("click", function (e) {
   gallerySubMenu.style.display = "none";
   gallerySubMenu.classList.remove("active");
   frame.src =
-    "https://kuula.co/share/518JR?logo=-1&info=0&fs=0&vr=1&zoom=1&gyro=0&thumbs=1";
+    "https://heyazah.viewin360.co/share/5DhN4?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=0&inst=0&keys=0";
 });
 
 closeAminities.addEventListener("click", function (e) {
@@ -83,7 +83,7 @@ surroundings.addEventListener("click", function (e) {
   gallerySubMenu.style.display = "none";
   gallerySubMenu.classList.remove("active");
   frame.src =
-    "https://kuula.co/share/51x7m?logo=-1&info=0&fs=0&vr=1&zoom=1&gyro=0&thumbs=1&keys=0";
+    "https://heyazah.viewin360.co/share/5DhN5?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=0&inst=0&keys=0";
   // surroundingNav.style.display = "block";
 });
 

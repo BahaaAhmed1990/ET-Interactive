@@ -90,6 +90,20 @@ body #modal .modal-content {
   width: 100%;
   height: 100%;
 }
+@media (min-width: 576px) and (max-width: 1024px) {
+  body #modal .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 570px) {
+  body #modal .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 body #modal .modal-content .modal-video {
   display: none;
   background: none;
@@ -107,6 +121,11 @@ body #modal .modal-content .render-image {
   /* Position the "next button" to the right */
   /* On hover, add a black background color with a little bit see-through */
   /* Fading animation */
+}
+@media (max-width: 570px) {
+  body #modal .modal-content .render-image {
+    height: 40%;
+  }
 }
 body #modal .modal-content .render-image .mySlides {
   display: none;
@@ -128,12 +147,38 @@ body #modal .modal-content .render-image .next {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
+@media (max-width: 570px) {
+  body #modal .modal-content .render-image .prev,
+  body #modal .modal-content .render-image .next {
+    padding: 10px;
+  }
+}
 body #modal .modal-content .render-image .prev {
   left: 0;
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body #modal .modal-content .render-image .prev {
+    left: -47px;
+  }
+}
+@media (max-width: 570px) {
+  body #modal .modal-content .render-image .prev {
+    left: -33px;
+  }
 }
 body #modal .modal-content .render-image .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+@media (min-width: 576px) and (max-width: 1024px) {
+  body #modal .modal-content .render-image .next {
+    right: -47px;
+  }
+}
+@media (max-width: 570px) {
+  body #modal .modal-content .render-image .next {
+    right: -33px;
+  }
 }
 body #modal .modal-content .render-image .prev:hover,
 body #modal .modal-content .render-image .next:hover {
@@ -281,12 +326,33 @@ body main #logos div:first-child {
   margin-left: 20px;
   margin-top: 20px;
 }
+body main #logos div:first-child.heyaza-logo {
+  margin-top: 15px;
+}
+body main #logos div:first-child.heyaza-logo img {
+  width: 33%;
+}
+@media (max-width: 570px) {
+  body main #logos div:first-child img {
+    width: 50%;
+  }
+}
 body main #logos div:last-child {
   margin-right: 20px;
   margin-top: 20px;
 }
+@media (max-width: 570px) {
+  body main #logos div:last-child {
+    margin-top: 10px;
+  }
+}
 body main #logos div:last-child img {
   height: 88px;
+}
+@media (max-width: 570px) {
+  body main #logos div:last-child img {
+    height: 46px;
+  }
 }
 body main #surrounding-nav {
   display: none;
@@ -341,6 +407,7 @@ body main #aminities {
 @media (max-width: 570px) {
   body main #aminities {
     height: 25%;
+    bottom: 16%;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
@@ -403,14 +470,16 @@ body main #aminities .sub-nav {
 body main #aminities .sub-nav .elevations,
 body main #aminities .sub-nav .enterance,
 body main #aminities .sub-nav .landscape,
-body main #aminities .sub-nav .street-view {
+body main #aminities .sub-nav .street-view,
+body main #aminities .sub-nav .building {
   width: 13%;
 }
 @media (max-width: 570px) {
   body main #aminities .sub-nav .elevations,
   body main #aminities .sub-nav .enterance,
   body main #aminities .sub-nav .landscape,
-  body main #aminities .sub-nav .street-view {
+  body main #aminities .sub-nav .street-view,
+  body main #aminities .sub-nav .building {
     width: 33%;
   }
 }
@@ -418,7 +487,8 @@ body main #aminities .sub-nav .street-view {
   body main #aminities .sub-nav .elevations,
   body main #aminities .sub-nav .enterance,
   body main #aminities .sub-nav .landscape,
-  body main #aminities .sub-nav .street-view {
+  body main #aminities .sub-nav .street-view,
+  body main #aminities .sub-nav .building {
     width: 33%;
   }
 }
@@ -467,6 +537,7 @@ body main #navbar {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
+  padding-left: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -479,6 +550,7 @@ body main #navbar {
     justify-content: space-around;
     align-items: center;
     bottom: 10%;
+    padding-left: 0;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
@@ -491,6 +563,7 @@ body main #navbar div {
   display: flex;
   flex-direction: row-reverse;
   color: white;
+  align-items: center;
 }
 body main #navbar div .nav-link {
   display: block;
@@ -501,11 +574,17 @@ body main #navbar div .nav-link {
   padding: 1em;
   transition: all 0.3s ease-in-out;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 @media (min-width: 1980px) {
   body main #navbar div .nav-link {
     font-size: 18px;
+    padding-left: 5px;
+  }
+}
+@media (min-width: 1026px) and (max-width: 1979px) {
+  body main #navbar div .nav-link {
+    padding-left: 3px;
   }
 }
 @media (max-width: 570px) {
@@ -517,6 +596,7 @@ body main #navbar div .nav-link {
 @media (min-width: 576px) and (max-width: 1024px) {
   body main #navbar div .nav-link {
     font-size: 10px;
+    padding-left: 3px;
   }
 }
 body main #navbar div .nav-link:hover {
@@ -533,10 +613,16 @@ body main #navbar div .nav-link:hover {
     height: 12px;
   }
 }
+@media (min-width: 1980px) {
+  body main #navbar div svg {
+    width: 18px;
+    height: 18px;
+  }
+}
 body main #navbar .gallery-submenu {
   display: none;
   position: absolute;
-  top: -163%;
+  top: -179%;
   background-color: rgba(0, 0, 0, 0.2509803922);
 }
 @media (min-width: 1980px) {
@@ -551,7 +637,7 @@ body main #navbar .gallery-submenu {
 }
 @media (min-width: 576px) and (max-width: 1024px) {
   body main #navbar .gallery-submenu {
-    top: -261%;
+    top: -294%;
   }
 }
 body main #navbar .gallery-submenu a {
@@ -560,7 +646,7 @@ body main #navbar .gallery-submenu a {
   text-transform: uppercase;
   font-size: 9px;
   width: 100%;
-  padding: 9px 14px;
+  padding: 6px 1px;
   font-family: sans-serif;
   text-decoration: none;
 }

@@ -34,7 +34,7 @@ home.addEventListener("click", function (e) {
   gallerySubMenu.style.display = "none";
   gallerySubMenu.classList.remove("active");
   frame.src =
-    "https://heyazah.viewin360.co/share/5DpHs?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=-1&inst=0&keys=0";
+    "https://heyazah.viewin360.co/share/5DY7b?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=0&inst=0&keys=0";
 });
 
 [...aminitiesLinks].map((link) => {
@@ -67,7 +67,7 @@ landscape.addEventListener("click", function (e) {
   gallerySubMenu.style.display = "none";
   gallerySubMenu.classList.remove("active");
   frame.src =
-    "https://heyazah.viewin360.co/share/5Dmds?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=-1&inst=0&keys=0";
+    "https://heyazah.viewin360.co/share/5DY7l?logo=-1&info=0&fs=0&vr=1&gyro=0&thumbs=0&inst=0&keys=0";
 });
 
 closeAminities.addEventListener("click", function (e) {
@@ -181,7 +181,7 @@ const businessYard = document.querySelector("#business-yard");
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
-  location.pathname = location.pathname.replace("business-yard", "the-wave");
+  location.pathname = location.pathname.replace("business-yard", "sigma");
 });
 
 lex.addEventListener("click", function (e) {
@@ -199,7 +199,10 @@ skyline.addEventListener("click", function (e) {
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem3");
-  location.pathname = location.pathname.replace("business-yard", "heyazah");
+  location.pathname = location.pathname.replace(
+    "business-yard",
+    "heyazah-gate"
+  );
 });
 
 businessYard.addEventListener("click", function (e) {

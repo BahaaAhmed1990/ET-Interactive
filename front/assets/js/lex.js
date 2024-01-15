@@ -181,7 +181,7 @@ const businessYard = document.querySelector("#business-yard");
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
-  location.pathname = location.pathname.replace("lex", "the-wave");
+  location.pathname = location.pathname.replace("lex", "sigma");
 });
 
 lex.addEventListener("click", function (e) {
@@ -199,7 +199,7 @@ skyline.addEventListener("click", function (e) {
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem3");
-  location.pathname = location.pathname.replace("lex", "heyazah");
+  location.pathname = location.pathname.replace("lex", "heyazah-gate");
 });
 
 businessYard.addEventListener("click", function (e) {

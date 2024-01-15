@@ -181,29 +181,29 @@ const businessYard = document.querySelector("#business-yard");
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
-  location.pathname = location.pathname.replace("the-wave", "the-wave");
+  location.pathname = location.pathname.replace("sigma", "sigma");
 });
 
 lex.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem1");
-  location.pathname = location.pathname.replace("the-wave", "lex");
+  location.pathname = location.pathname.replace("sigma", "lex");
 });
 
 skyline.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem2");
-  location.pathname = location.pathname.replace("the-wave", "sky-line");
+  location.pathname = location.pathname.replace("sigma", "sky-line");
 });
 
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem3");
-  location.pathname = location.pathname.replace("the-wave", "heyazah");
+  location.pathname = location.pathname.replace("sigma", "heyazah-gate");
 });
 
 businessYard.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem4");
-  location.pathname = location.pathname.replace("the-wave", "business-yard");
+  location.pathname = location.pathname.replace("sigma", "business-yard");
 });
