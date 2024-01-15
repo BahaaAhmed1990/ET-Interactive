@@ -49,14 +49,13 @@ home.addEventListener("click", function (e) {
 });
 
 // console.log(document.querySelector(".mm").getAttribute("data"));
-
+frame.addEventListener("load", function (e) {
+  console.log("load");
+  loader.style.display = "none";
+});
 // console.log("first");
 window.onload = (event) => {
   console.log("page is fully loaded");
-
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 500);
 };
 
 landscape.addEventListener("click", function (e) {
