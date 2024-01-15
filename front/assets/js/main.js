@@ -8,7 +8,7 @@ const businessYard = document.querySelector("#business-yard");
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
-  location.pathname = location.pathname.concat("the-wave");
+  location.pathname = location.pathname.concat("sigma");
 });
 
 lex.addEventListener("click", function (e) {
@@ -26,7 +26,7 @@ skyline.addEventListener("click", function (e) {
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem3");
-  location.pathname = location.pathname.concat("heyazah");
+  location.pathname = location.pathname.concat("heyazah-gate");
 });
 
 businessYard.addEventListener("click", function (e) {

@@ -119,6 +119,8 @@ closeModal.addEventListener("click", function (e) {
 heyazaProjects.addEventListener("click", function (e) {
   e.preventDefault();
   image2d.style.display = "block";
+  gallerySubMenu.style.display = "none";
+  gallerySubMenu.classList.remove("active");
 });
 
 videoLink.addEventListener("click", function (e) {
@@ -179,29 +181,32 @@ const businessYard = document.querySelector("#business-yard");
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
-  location.pathname = location.pathname.replace("heyazah", "the-wave");
+  location.pathname = location.pathname.replace("heyazah-gate", "sigma");
 });
 
 lex.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem1");
-  location.pathname = location.pathname.replace("heyazah", "lex");
+  location.pathname = location.pathname.replace("heyazah-gate", "lex");
 });
 
 skyline.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem2");
-  location.pathname = location.pathname.replace("heyazah", "sky-line");
+  location.pathname = location.pathname.replace("heyazah-gate", "sky-line");
 });
 
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem3");
-  location.pathname = location.pathname.replace("heyazah", "heyazah");
+  location.pathname = location.pathname.replace("heyazah-gate", "heyazah-gate");
 });
 
 businessYard.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem4");
-  location.pathname = location.pathname.replace("heyazah", "business-yard");
+  location.pathname = location.pathname.replace(
+    "heyazah-gate",
+    "business-yard"
+  );
 });

@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "front", "index.html"));
 });
 
-app.get("/heyazah", (req, res) => {
+app.get("/heyazah-gate", (req, res) => {
   res.sendFile(path.resolve(__dirname, "front", "heyazah.html"));
 });
 
@@ -23,7 +23,7 @@ app.get("/lex", (req, res) => {
   res.sendFile(path.resolve(__dirname, "front", "lex.html"));
 });
 
-app.get("/the-wave", (req, res) => {
+app.get("/sigma", (req, res) => {
   res.sendFile(path.resolve(__dirname, "front", "wave.html"));
 });
 

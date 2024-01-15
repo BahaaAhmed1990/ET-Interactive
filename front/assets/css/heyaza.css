@@ -475,9 +475,10 @@ body main #navbar {
 @media (max-width: 570px) {
   body main #navbar {
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
-    align-items: start;
+    align-items: center;
+    bottom: 10%;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
@@ -486,7 +487,12 @@ body main #navbar {
     bottom: 0.5%;
   }
 }
-body main #navbar .nav-link {
+body main #navbar div {
+  display: flex;
+  flex-direction: row-reverse;
+  color: white;
+}
+body main #navbar div .nav-link {
   display: block;
   color: white;
   text-decoration: none;
@@ -498,50 +504,40 @@ body main #navbar .nav-link {
   font-size: 14px;
 }
 @media (min-width: 1980px) {
-  body main #navbar .nav-link {
+  body main #navbar div .nav-link {
     font-size: 18px;
   }
 }
 @media (max-width: 570px) {
-  body main #navbar .nav-link {
+  body main #navbar div .nav-link {
     font-size: 7px;
     padding: 0.5em;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
-  body main #navbar .nav-link {
+  body main #navbar div .nav-link {
     font-size: 10px;
   }
 }
-body main #navbar .nav-link:hover {
+body main #navbar div .nav-link:hover {
   color: #a99929;
 }
-body main #navbar .nav-link i {
-  display: inline-block;
-  margin-right: 6px;
-}
 @media (max-width: 570px) {
-  body main #navbar .nav-link i svg {
+  body main #navbar div svg {
     width: 10px;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
-  body main #navbar .nav-link i svg {
+  body main #navbar div svg {
     width: 12px;
     height: 12px;
-  }
-}
-@media (max-width: 570px) {
-  body main #navbar .nav-link i {
-    display: inline-block;
-    margin-right: 2px;
-    transform: translateY(4px);
   }
 }
 body main #navbar .gallery-submenu {
   display: none;
   position: absolute;
   top: -163%;
+  background-color: rgba(0, 0, 0, 0.2509803922);
 }
 @media (min-width: 1980px) {
   body main #navbar .gallery-submenu {
@@ -550,7 +546,7 @@ body main #navbar .gallery-submenu {
 }
 @media (max-width: 570px) {
   body main #navbar .gallery-submenu {
-    top: -345%;
+    top: -435%;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
@@ -563,7 +559,6 @@ body main #navbar .gallery-submenu a {
   color: white;
   text-transform: uppercase;
   font-size: 9px;
-  background-color: rgba(0, 0, 0, 0.2509803922);
   width: 100%;
   padding: 9px 14px;
   font-family: sans-serif;
@@ -578,7 +573,7 @@ body main #navbar .gallery-submenu a {
   body main #navbar .gallery-submenu a {
     text-transform: capitalize;
     font-size: 6px;
-    padding: 10.5px 2px;
+    padding: 4.5px 2px;
   }
 }
 @media (min-width: 576px) and (max-width: 1024px) {
