@@ -329,8 +329,10 @@ body main #logos div:first-child {
 body main #logos div:first-child.heyaza-logo {
   margin-top: 15px;
 }
-body main #logos div:first-child.heyaza-logo img {
-  width: 33%;
+@media (max-width: 570px) {
+  body main #logos div:first-child.heyaza-logo img {
+    width: 33%;
+  }
 }
 @media (max-width: 570px) {
   body main #logos div:first-child img {

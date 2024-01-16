@@ -284,7 +284,9 @@ body {
         &.heyaza-logo {
           margin-top: 15px;
           img {
-            width: 33%;
+            @include respond(xs) {
+              width: 33%;
+            }
           }
         }
 
