@@ -23,7 +23,13 @@ const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 const heyazaProjects = document.querySelector("#heyaza-projects");
 const home = document.querySelector("#home");
-
+const allProjectsBtn = document.querySelector(".all-projects-btn");
+const menuBtn = document.querySelector("#menu-btn");
+const projects = document.querySelector(".projects");
+const projectsBtn = document.querySelector(".projects-btn");
+const hamburger = document.querySelector(".hamburger-icon");
+const closeTopMenu = document.querySelector(".close-top-menu");
+const closePopUp = document.querySelector("#close-pop-up");
 // console.log(aminitiesLinks);
 let slideIndex = 1;
 
@@ -178,35 +184,81 @@ const skyline = document.querySelector("#skyline");
 const heyazah = document.querySelector("#heyazah");
 const businessYard = document.querySelector("#business-yard");
 
+// navigate to prjects pages
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
-  location.pathname = location.pathname.replace("heyazah-gate", "sigma");
+  document.querySelector("#pop-up-card").style.display = "flex";
+  document.querySelector(".sigma-pop-up").style.display = "block";
+  // location.pathname = location.pathname.concat("sigma");
 });
 
 lex.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem1");
-  location.pathname = location.pathname.replace("heyazah-gate", "lex");
+  document.querySelector("#pop-up-card").style.display = "flex";
+  document.querySelector(".lex-pop-up").style.display = "block";
+  // location.pathname = location.pathname.concat("lex");
 });
 
 skyline.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem2");
-  location.pathname = location.pathname.replace("heyazah-gate", "sky-line");
+  document.querySelector("#pop-up-card").style.display = "flex";
+  document.querySelector(".skyline-pop-up").style.display = "block";
+  // location.pathname = location.pathname.concat("sky-line");
 });
 
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem3");
-  location.pathname = location.pathname.replace("heyazah-gate", "heyazah-gate");
+  document.querySelector("#pop-up-card").style.display = "flex";
+  document.querySelector(".heyazah-pop-up").style.display = "block";
+  // location.pathname = location.pathname.concat("heyazah-gate");
 });
 
 businessYard.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem4");
-  location.pathname = location.pathname.replace(
-    "heyazah-gate",
-    "business-yard"
-  );
+  document.querySelector("#pop-up-card").style.display = "flex";
+  document.querySelector(".yard-pop-up").style.display = "block";
+  // location.pathname = location.pathname.concat("business-yard");
+});
+// toggle side menu
+menuBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("menu button");
+  allProjectsBtn.style.display = "none";
+  projects.style.transform = "translateX(0px)";
+  projects.style.opacity = "1";
+  document.querySelector(".left-logo").style.opacity = "0";
+});
+
+projectsBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  projects.style.transform = "translateX(-410px)";
+  allProjectsBtn.style.display = "flex";
+  document.querySelector(".left-logo").style.opacity = "1";
+});
+// toggle top menu
+hamburger.addEventListener("click", function (e) {
+  e.preventDefault();
+  document.querySelector(".all-nav-links").style.display = "flex";
+  hamburger.style.display = "none";
+});
+closeTopMenu.addEventListener("click", function (e) {
+  e.preventDefault();
+  document.querySelector(".all-nav-links").style.display = "none";
+  hamburger.style.display = "block";
+});
+
+// close all pop ups
+closePopUp.addEventListener("click", function (e) {
+  e.preventDefault();
+  document.querySelector("#pop-up-card").style.display = "none";
+
+  let allContent = document.querySelectorAll(".pop-up-content");
+  [...allContent].map((elem) => {
+    elem.style.display = "none";
+  });
 });

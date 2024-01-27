@@ -260,11 +260,320 @@ body main #image-2d {
 }
 body main #image-2d #canvas {
   position: absolute;
-  top: 10%;
+  top: 0%;
   width: 100%;
-  height: 40%;
+  height: 100%;
   left: 0%;
   pointer-events: none;
+}
+body main #image-2d #pop-up-card {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 25%;
+  width: 180px;
+  z-index: 3;
+  flex-direction: row-reverse;
+  border-radius: 4px;
+  overflow: hidden;
+}
+body main #image-2d #pop-up-card .pop-up-content {
+  display: none;
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(1, 4, 15, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+body main #image-2d #pop-up-card .pop-up-img {
+  display: flex;
+}
+body main #image-2d #pop-up-card .pop-up-img img {
+  width: 100%;
+}
+body main #image-2d #pop-up-card .pop-up-info {
+  font-family: cursive;
+  font-size: 10px;
+  text-align: left;
+  line-height: 1.5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #fff;
+}
+body main #image-2d #pop-up-card .pop-up-btn {
+  display: flex;
+  justify-content: center;
+}
+body main #image-2d #pop-up-card .pop-up-btn button {
+  width: 90%;
+  background: rgb(242, 237, 233);
+  border-radius: 8px;
+  border: none;
+}
+body main #image-2d #pop-up-card #close-pop-up {
+  padding-left: 3px;
+}
+body main #image-2d #pop-up-card #close-pop-up button {
+  background: rgba(1, 4, 15, 0.5);
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+body main #image-2d #pop-up-card #close-pop-up svg {
+  transform: rotateZ(179deg) rotateX(182deg);
+}
+body main #image-2d #menu {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+body main #image-2d #menu .all-projects-btn {
+  pointer-events: all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(1, 4, 15, 0.5);
+  border-radius: 0px 8px 8px 0px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  padding: 10px 0;
+}
+body main #image-2d #menu .all-projects-btn:hover svg {
+  transform: rotate(180deg) scale(1.5);
+}
+body main #image-2d #menu .all-projects-btn #menu-btn {
+  border: none;
+  background: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: inherit;
+}
+body main #image-2d #menu .all-projects-btn svg {
+  transition: all 0.3s ease-in-out;
+  transform: rotate(180deg);
+  width: auto;
+}
+body main #image-2d #menu .all-projects-btn svg path {
+  stroke: #fff;
+}
+body main #image-2d #menu .projects {
+  width: 600px;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  transform: translateX(-410px);
+  transition: all 0.3s ease-in-out;
+}
+body main #image-2d #menu .projects .projects-content {
+  width: 264px;
+  background-color: rgba(1, 4, 15, 0.5);
+  height: 100%;
+  padding-right: 5px;
+  padding-bottom: 15px;
+}
+body main #image-2d #menu .projects .projects-content .title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 55px;
+}
+body main #image-2d #menu .projects .projects-content .title::after {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(0deg, transparent, rgba(1, 4, 15, 0.5) 100%);
+  z-index: 99;
+}
+body main #image-2d #menu .projects .projects-content .title img {
+  width: 36px;
+  height: 39px;
+}
+body main #image-2d #menu .projects .projects-content .title h1 {
+  font-family: monospace;
+  color: white;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+body main #image-2d #menu .projects .projects-content .cards-list {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 5px 0 8px;
+  overflow-y: scroll;
+  pointer-events: all;
+}
+body main #image-2d #menu .projects .projects-content .cards-list::-webkit-scrollbar {
+  width: 8px;
+}
+body main #image-2d #menu .projects .projects-content .cards-list::-webkit-scrollbar-thumb {
+  background: rgba(1, 4, 15, 0.5);
+  border-radius: 4px;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-img {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-img img {
+  width: 100%;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-info {
+  display: flex;
+  align-self: flex-start;
+  padding: 0 10px;
+  padding-right: 0;
+  align-items: center;
+  width: 100%;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-info h4 {
+  text-transform: uppercase;
+  margin: 0;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-btn {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-btn .card-item h6 {
+  margin: 0;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-btn .card-item p {
+  margin: 2px 0;
+  color: rgb(182, 182, 182);
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-btn .card-item:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #image-2d #menu .projects .projects-content .cards-list .project-card .card-btn button {
+  width: 91px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 9.6px;
+  background: rgb(242, 237, 233);
+  color: rgb(112, 112, 112);
+  border: none;
+  cursor: pointer;
+}
+body main #image-2d #menu .projects .projects-btn {
+  position: relative;
+  background-color: rgba(1, 4, 15, 0.5);
+  border-radius: 0px 8px 8px 0px;
+  width: 28px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all;
+  cursor: pointer;
+}
+body main #image-2d #menu .projects .projects-btn::before {
+  position: absolute;
+  background-color: transparent;
+  top: -20px;
+  left: 0px;
+  height: 20px;
+  width: 10px;
+  border-bottom-left-radius: 8px;
+  box-shadow: rgba(1, 4, 15, 0.5) 0px 10px 0px 0px;
+}
+body main #image-2d #menu .projects .projects-btn::after {
+  position: absolute;
+  background-color: transparent;
+  bottom: -20px;
+  left: 0px;
+  height: 20px;
+  width: 10px;
+  border-top-left-radius: 8px;
+  box-shadow: rgba(1, 4, 15, 0.5) 0px -10px 0px 0px;
+}
+body main #image-2d #menu .projects .projects-btn .projects-icon {
+  display: flex;
+}
+body main #image-2d #menu .projects .projects-btn .projects-icon path {
+  stroke: #fff;
+}
+body main #image-2d .top-menu {
+  position: fixed;
+  top: 17%;
+  right: 1%;
+  display: flex;
+  z-index: 5;
+}
+body main #image-2d .top-menu .hamburger-icon {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+body main #image-2d .top-menu .hamburger-icon svg path {
+  stroke: #000;
+}
+body main #image-2d .top-menu .all-nav-links {
+  display: none;
+  background-color: rgb(55, 53, 68);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+body main #image-2d .top-menu .all-nav-links .close-top-menu {
+  transform: rotateY(180deg);
+  transition: all 0.3s ease-in-out;
+}
+body main #image-2d .top-menu .all-nav-links .close-top-menu svg path {
+  stroke: #fff;
+}
+body main #image-2d .top-menu .all-nav-links .close-top-menu:hover svg {
+  transform: scale(1.2);
+}
+body main #image-2d .top-menu .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 6px;
+  cursor: pointer;
+}
+body main #image-2d .top-menu .nav-link a {
+  font-size: 9px;
+  text-decoration: none;
+  font-family: monospace;
+  color: white;
+}
+body main #image-2d .top-menu .nav-link svg {
+  width: auto !important;
+  height: auto !important;
+  margin-left: 3px;
 }
 body main #image-2d .trademark {
   position: absolute;
