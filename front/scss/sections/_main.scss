@@ -12,6 +12,54 @@ body {
   margin: 0;
   padding: 0;
   background-color: bisque;
+  .social-menu {
+    display: none;
+    position: fixed;
+    right: 2%;
+    bottom: 9%;
+    width: 200px;
+    height: 250px;
+    background-color: rgba(1, 4, 15, 0.8);
+    border-radius: 12px;
+    padding: 10px;
+    z-index: 3;
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      .row-control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        border: 1px solid white;
+        border-radius: 12px;
+        padding: 5px 9px;
+
+        .para {
+          color: white;
+          text-transform: uppercase;
+          font-family: sans-serif;
+          font-size: 10px;
+          width: 58%;
+        }
+      }
+    }
+    .social-icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      margin: 15px auto;
+      .icon-container {
+        padding: 6px 9px;
+        background-color: rgba(1, 4, 15, 0.5);
+        border-radius: 8px;
+      }
+    }
+  }
 
   .form {
     display: none;
@@ -100,7 +148,7 @@ body {
       align-self: end;
       margin-bottom: 20px;
     }
-    .controls {
+    .contacts-control {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -109,6 +157,14 @@ body {
       border-radius: 8px;
       background-color: rgba(1, 4, 15, 0.5);
       color: #fff;
+      transition: all 0.3s ease-in-out;
+      &.active {
+        background-color: azure;
+        color: #696969;
+        svg path {
+          fill: #696969;
+        }
+      }
 
       p {
         margin: 0;

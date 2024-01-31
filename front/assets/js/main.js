@@ -17,6 +17,8 @@ const closeTopMenu = document.querySelector(".close-top-menu");
 const mail = document.querySelector(".mail");
 const closeForm = document.querySelector(".close-form");
 
+const controls = document.querySelector(".contacts-control");
+const socialMenu = document.querySelector(".social-menu");
 // navigate to prjects pages
 wave.addEventListener("click", function (e) {
   e.preventDefault();
@@ -126,5 +128,26 @@ closeForm.addEventListener("click", function (e) {
     .classList.remove("animate__backInDown");
 
   document.querySelector(".form-content").classList.add("animate__backOutDown");
-  document.querySelector(".form").style.display = "none";
+  setTimeout(() => {
+    document.querySelector(".form").style.display = "none";
+  }, 1000);
+});
+// ==========================================
+// open social menu
+controls.addEventListener("click", function (e) {
+  console.log("first");
+  e.preventDefault();
+  socialMenu.classList = "social-menu";
+  controls.classList.toggle("active");
+  if (controls.classList.contains("active")) {
+    socialMenu.classList.add("animate__animated");
+    socialMenu.classList.add("animate__backInDown");
+    socialMenu.style.display = "block";
+  } else {
+    socialMenu.classList.add("animate__animated");
+    socialMenu.classList.add("animate__backOutDown");
+    setTimeout(() => {
+      socialMenu.style.display = "none";
+    }, 1000);
+  }
 });
