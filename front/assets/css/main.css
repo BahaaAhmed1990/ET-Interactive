@@ -12,32 +12,135 @@ body {
   padding: 0;
   background-color: bisque;
 }
-body .top-menu {
+body .form {
+  display: none;
   position: fixed;
-  top: 17%;
-  right: 1%;
-  display: flex;
-  z-index: 5;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
-body .top-menu .hamburger-icon {
-  transform: rotateY(180deg);
+body .form .form-content {
+  width: 500px;
+  height: 280px;
+  border-radius: 12px;
+  background-color: rgba(1, 4, 15, 0.5);
+}
+body .form .form-title {
   display: flex;
   align-items: center;
-  border-radius: 4px;
+  position: relative;
+  justify-content: center;
+}
+body .form .form-title h3 {
+  color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+body .form .form-title svg {
+  position: absolute;
+  right: 8%;
+}
+body .form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+body .form form .form-control {
+  width: 40%;
+}
+body .form form .form-control label {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 10px;
+}
+body .form form .form-control input {
+  width: 100%;
+  background: rgba(1, 4, 15, 0.7);
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 24px;
+  color: white;
+  padding: 4px 8px;
+}
+body .form form .form-control input[type=submit] {
+  text-transform: uppercase;
+  font-size: 14px;
+  /* width: 70%; */
+  padding: 10px;
+}
+body .contacts {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+body .contacts .mail {
+  background-color: rgba(1, 4, 15, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  align-self: end;
+  margin-bottom: 20px;
+}
+body .contacts .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 7px 15px;
+  border-radius: 8px;
+  background-color: rgba(1, 4, 15, 0.5);
+  color: #fff;
+}
+body .contacts .controls p {
+  margin: 0;
+  margin-left: 20px;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+body .top-menu {
+  position: fixed;
+  bottom: 1%;
+  left: 50%;
+  display: flex;
+  z-index: 5;
+  transform: translate(-50%);
+}
+body .top-menu .hamburger-icon {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(1, 4, 15, 0.5);
   cursor: pointer;
   transition: all 0.3s;
+  animation-iteration-count: infinite;
 }
 body .top-menu .hamburger-icon svg path {
-  stroke: #000;
+  stroke: #fff;
 }
 body .top-menu .all-nav-links {
   display: none;
-  background-color: rgb(55, 53, 68);
+  background-color: rgba(1, 4, 15, 0.5);
   border-radius: 10px;
   transition: all 0.3s;
 }
 body .top-menu .all-nav-links .close-top-menu {
-  transform: rotateY(180deg);
+  transform: rotateZ(270deg);
   transition: all 0.3s ease-in-out;
 }
 body .top-menu .all-nav-links .close-top-menu svg path {
@@ -119,6 +222,7 @@ body #pop-up-card #close-pop-up button {
   border: none;
   color: white;
   border-radius: 4px;
+  cursor: pointer;
 }
 body #pop-up-card #close-pop-up svg {
   transform: rotateZ(179deg) rotateX(182deg);
@@ -186,7 +290,7 @@ body #menu .projects .projects-content .title {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 55px;
+  margin-bottom: 15px;
 }
 body #menu .projects .projects-content .title::after {
   position: absolute;
@@ -211,7 +315,7 @@ body #menu .projects .projects-content .cards-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 36px;
   padding: 12px 5px 0 8px;
   overflow-y: scroll;
   pointer-events: all;
@@ -253,12 +357,13 @@ body #menu .projects .projects-content .cards-list .project-card .card-info {
 body #menu .projects .projects-content .cards-list .project-card .card-info h4 {
   text-transform: uppercase;
   margin: 0;
+  flex-grow: 1;
+  font-size: 14px;
 }
 body #menu .projects .projects-content .cards-list .project-card .card-btn {
   padding: 5px;
   display: flex;
   justify-content: flex-end;
-  width: 100%;
 }
 body #menu .projects .projects-content .cards-list .project-card .card-btn .card-item h6 {
   margin: 0;

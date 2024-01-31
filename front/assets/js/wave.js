@@ -190,6 +190,7 @@ const businessYard = document.querySelector("#business-yard");
 wave.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem");
+  closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".sigma-pop-up").style.display = "block";
   // location.pathname = location.pathname.concat("sigma");
@@ -198,6 +199,7 @@ wave.addEventListener("click", function (e) {
 lex.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem1");
+  closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".lex-pop-up").style.display = "block";
   // location.pathname = location.pathname.concat("lex");
@@ -206,6 +208,7 @@ lex.addEventListener("click", function (e) {
 skyline.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem2");
+  closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".skyline-pop-up").style.display = "block";
   // location.pathname = location.pathname.concat("sky-line");
@@ -213,6 +216,7 @@ skyline.addEventListener("click", function (e) {
 
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
+  closeAllContent();
   console.log("wdem3");
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".heyazah-pop-up").style.display = "block";
@@ -222,6 +226,7 @@ heyazah.addEventListener("click", function (e) {
 businessYard.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("wdem4");
+  closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".yard-pop-up").style.display = "block";
   // location.pathname = location.pathname.concat("business-yard");
@@ -258,9 +263,12 @@ closeTopMenu.addEventListener("click", function (e) {
 closePopUp.addEventListener("click", function (e) {
   e.preventDefault();
   document.querySelector("#pop-up-card").style.display = "none";
+  closeAllContent();
+});
 
+function closeAllContent() {
   let allContent = document.querySelectorAll(".pop-up-content");
   [...allContent].map((elem) => {
     elem.style.display = "none";
   });
-});
+}
