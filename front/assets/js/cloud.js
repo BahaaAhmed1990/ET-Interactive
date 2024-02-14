@@ -41,11 +41,11 @@ function Cloud(x, y, dx, width, height, num) {
 }
 
 // cloud instaces
-const cloud1 = new Cloud(0, 0, 1, 350, 200, cloudNum());
-const cloud1_1 = new Cloud(150, 10, 1, 350, 200, cloudNum());
+const cloud1 = new Cloud(0, 0, 0.7, 350, 200, 0);
+const cloud1_1 = new Cloud(200, 10, 0.7, 350, 200, 0);
 
-const cloud2 = new Cloud(innerWidth / 2, 0, 1, 350, 150, cloudNum());
-const cloud2_1 = new Cloud(innerWidth / 2 + 150, 0, 1, 350, 200, cloudNum());
+const cloud2 = new Cloud(innerWidth / 2, 0, 0.7, 350, 150, 0);
+const cloud2_1 = new Cloud(innerWidth / 2 + 200, 0, 0.7, 350, 200, 0);
 
 const cloud3 = new Cloud((3 * innerWidth) / 4, 0, 1, 350, 175, cloudNum());
 
@@ -58,7 +58,7 @@ function animate() {
   cloud1_1.move();
   cloud2.move();
   cloud2_1.move();
-  cloud3.move();
+  // cloud3.move();
 }
 // img.onload = () => {
 //
