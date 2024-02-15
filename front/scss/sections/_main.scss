@@ -491,7 +491,7 @@ body {
           }
 
           &::-webkit-scrollbar-thumb {
-            background: rgba(1, 4, 15, 50%);
+            background: white;
             border-radius: 4px;
           }
           .project-card {
@@ -650,6 +650,10 @@ body {
       left: 0;
       z-index: 1;
       pointer-events: none;
+      display: block;
+      &.hide {
+        display: none;
+      }
     }
     svg {
       width: 100%;
@@ -663,6 +667,12 @@ body {
       }
       @include respond(xl) {
         height: auto;
+      }
+      .over-lay {
+        display: block;
+        &.hide {
+          display: none;
+        }
       }
       #wave,
       #heyazah,

@@ -493,7 +493,7 @@ body #menu .projects .projects-content .cards-list::-webkit-scrollbar {
   width: 8px;
 }
 body #menu .projects .projects-content .cards-list::-webkit-scrollbar-thumb {
-  background: rgba(1, 4, 15, 0.5);
+  background: white;
   border-radius: 4px;
 }
 body #menu .projects .projects-content .cards-list .project-card {
@@ -621,6 +621,10 @@ body main #canvas {
   left: 0;
   z-index: 1;
   pointer-events: none;
+  display: block;
+}
+body main #canvas.hide {
+  display: none;
 }
 body main svg {
   width: 100%;
@@ -641,6 +645,12 @@ body main svg {
   body main svg {
     height: auto;
   }
+}
+body main svg .over-lay {
+  display: block;
+}
+body main svg .over-lay.hide {
+  display: none;
 }
 body main svg #wave,
 body main svg #heyazah,

@@ -34,6 +34,11 @@ const modelContentPdf = document.querySelector(".modal-content-pdf");
 
 const whatsappIcon = document.querySelector("#whatsapp-row");
 
+const overLay = document.querySelector(".over-lay");
+const hideOverLay = document.querySelector("#hide-overlay");
+
+const fullScreen = document.querySelector("#full-screen");
+
 console.log(popUpBtn);
 
 // loading full document logic
@@ -246,3 +251,52 @@ whatsappIcon.addEventListener("click", function (e) {
   e.preventDefault();
   window.open("https://api.whatsapp.com/send/?phone=966920019711");
 });
+
+//=================================
+
+// hide over lay
+hideOverLay.addEventListener("click", function (e) {
+  e.preventDefault();
+  overLay.classList.toggle("hide");
+});
+
+//===================================
+
+// full screen mode
+let isFullscreen = false;
+
+// Function to toggle fullscreen mode
+function toggleFullscreen() {
+  if (!isFullscreen) {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      // Firefox
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      // Chrome, Safari and Opera
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      // IE/Edge
+      document.documentElement.msRequestFullscreen();
+    }
+    isFullscreen = true;
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      // Firefox
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      // Chrome, Safari and Opera
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      // IE/Edge
+      document.msExitFullscreen();
+    }
+    isFullscreen = false;
+  }
+}
+
+// Button click event listener
+fullScreen.addEventListener("click", toggleFullscreen);

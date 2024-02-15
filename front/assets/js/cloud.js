@@ -1,8 +1,13 @@
 console.log("cloud");
+// get canvas element from image-2d
 const canvas = document.getElementById("canvas");
+// get hide cloud element from social menu div
+const hideCloud = document.querySelector("#hide-cloud");
+
 // cloud img
 const img = new Image();
 img.src = "./assets/images/clouds.png";
+
 // canvas dimensions
 let innerWidth = window.innerWidth;
 let innerHeight = window.innerHeight;
@@ -51,18 +56,17 @@ const cloud3 = new Cloud((3 * innerWidth) / 4, 0, 1, 350, 175, cloudNum());
 
 // animation func
 function animate() {
-  requestAnimationFrame(animate);
+  animationId = requestAnimationFrame(animate);
 
   ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  // console.log("animate");
   cloud1.move();
   cloud1_1.move();
   cloud2.move();
   cloud2_1.move();
   // cloud3.move();
 }
-// img.onload = () => {
-//
-// };
+// start animation after image load
 img.onload = () => {
   // cloud1.draw();
   // cloud1_1.draw();
@@ -71,6 +75,18 @@ img.onload = () => {
   // cloud3.draw();
   animate();
 };
+
+// kill animation when hideoverlay button is clicked
+hideCloud.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("animation canceled");
+  canvas.classList.toggle("hide");
+  if (canvas.classList.contains("hide")) {
+    cancelAnimationFrame(animationId);
+  } else {
+    animate();
+  }
+});
 
 //helper funcs
 function cloudPosition() {

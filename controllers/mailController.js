@@ -16,7 +16,7 @@ const sendMail = (req, res) => {
   let transporter = nodemailer.createTransport(config);
   let message = {
     from: process.env.EMAIL,
-    to: "archmohamed2008@gmail.com",
+    to: "Info@heyazah.com",
     subject: "Place Order",
     html: `<b>Hello world?</b><br />
     ${name}<br/>
