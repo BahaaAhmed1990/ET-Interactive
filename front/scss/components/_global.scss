@@ -13,6 +13,9 @@ ul {
 button:hover {
   cursor: pointer;
 }
+button[disabled] {
+  display: none;
+}
 ul li:hover {
   cursor: pointer;
 }

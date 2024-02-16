@@ -1,4 +1,24 @@
-console.log("cloud");
+// this file contains
+
+// 1. calling elements form the dom
+// 2. loading full document logic
+// 3. open pop up when click projects from image
+// 4. toggle top menu
+// 5. close all pop ups
+// 6. open pop up from side menu
+// 7. toggle side menu
+// 8. toggle register interest form
+// 9. open social menu
+// 10. open & close modal for (pdf and video)
+// 11. go to whatsapp page contact
+// 12. hide over lay (all info on map)
+// 13. full screen mode
+
+//helper functions (clear all pop ups)
+
+console.log("main.js");
+
+// 1 . calling elements form the dom
 const img2d = document.querySelector("#image-2d");
 const wave = document.querySelector("#SIGMA");
 const lex = document.querySelector("#LEX");
@@ -39,32 +59,31 @@ const hideOverLay = document.querySelector("#hide-overlay");
 
 const fullScreen = document.querySelector("#full-screen");
 
-console.log(popUpBtn);
+//================================================================
 
-// loading full document logic
+//2. loading full document logic
 window.onload = function () {
   console.log("load");
-  console.log(img2d.scrollWidth, img2d.scrollHeight);
-  console.log(img2d.clientWidth, img2d.clientHeight);
+
+  // adjust scroll bar on extra small devices
   if (window.innerWidth <= 575) {
     var scrollX = (img2d.scrollWidth - img2d.clientWidth) / 3;
     var scrollY = (img2d.scrollHeight - img2d.clientHeight) / 2;
     img2d.scrollTo(scrollX + 180, scrollY + 170);
   }
 };
-// navigate to prjects pages
+//======================================================================
+
+// 3. open pop up when click projects from image
 wave.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("wdem");
   closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".sigma-pop-up").style.display = "block";
-  // location.pathname = location.pathname.concat("sigma");
 });
 
 lex.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("wdem1");
   closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".lex-pop-up").style.display = "block";
@@ -72,32 +91,27 @@ lex.addEventListener("click", function (e) {
 
 skyline.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("wdem2");
   closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".skyline-pop-up").style.display = "block";
-  // location.pathname = location.pathname.concat("sky-line");
 });
 
 heyazah.addEventListener("click", function (e) {
   e.preventDefault();
   closeAllContent();
-  console.log("wdem3");
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".heyazah-pop-up").style.display = "block";
-  // location.pathname = location.pathname.concat("heyazah-gate");
 });
 
 businessYard.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("wdem4");
   closeAllContent();
   document.querySelector("#pop-up-card").style.display = "flex";
   document.querySelector(".yard-pop-up").style.display = "block";
-  // location.pathname = location.pathname.concat("business-yard");
 });
+// =======================================================================
 
-// toggle top menu
+//4. toggle top menu
 hamburger.addEventListener("click", function (e) {
   e.preventDefault();
   document.querySelector(".all-nav-links").style.display = "flex";
@@ -108,22 +122,17 @@ closeTopMenu.addEventListener("click", function (e) {
   document.querySelector(".all-nav-links").style.display = "none";
   hamburger.style.display = "flex";
 });
+//===============================================================================
 
-// close all pop ups
+// 5. close all pop ups
 closePopUp.addEventListener("click", function (e) {
   e.preventDefault();
   document.querySelector("#pop-up-card").style.display = "none";
   closeAllContent();
 });
+//=====================================================================================
 
-function closeAllContent() {
-  let allContent = document.querySelectorAll(".pop-up-content");
-  [...allContent].map((elem) => {
-    elem.style.display = "none";
-  });
-}
-
-// open pop up from side menu
+// 6. open pop up from side menu
 [...cardItemButton].map((btn) => {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -133,9 +142,11 @@ function closeAllContent() {
     document.querySelector(`.${popUpTarget}`).style.display = "block";
   });
 });
-// =========================================
+// =======================================================================================
 
-// toggle side menu
+// 7.toggle side menu
+
+// open all projects
 menuBtn.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("menu button");
@@ -144,16 +155,19 @@ menuBtn.addEventListener("click", function (e) {
   projects.style.opacity = "1";
   document.querySelector(".form").style.display = "none";
   socialMenu.style.display = "none";
-  // document.querySelector(".all-nav-links").style.display = "none";
 });
 
+// close all projects
 projectsBtn.addEventListener("click", function (e) {
   e.preventDefault();
   projects.style.transform = "translateX(-410px)";
   allProjectsBtn.style.display = "flex";
 });
 
-// ==============================================
+// =======================================================================
+
+// 8. toggle register interest form
+
 // open form
 mail.addEventListener("click", function (e) {
   e.preventDefault();
@@ -162,51 +176,40 @@ mail.addEventListener("click", function (e) {
   document.querySelector(".top-menu").style.display = "none";
   document.getElementById("pop-up-card").style.display = "none";
   document.getElementById("menu").style.display = "none";
-
-  // document.querySelector(".form-content").classList.add("animate__animated");
-  // document
-  //   .querySelector(".form-content")
-  //   .classList.remove("animate__backOutDown");
-  // document.querySelector(".form-content").classList.add("animate__backInDown");
 });
 
 // close form
 closeForm.addEventListener("click", function (e) {
   e.preventDefault();
 
-  // document
-  // .querySelector(".form-content")
-  // .classList.remove("animate__backInDown");
-
-  // document.querySelector(".form-content").classList.add("animate__backOutDown");
   document.querySelector(".top-menu").style.display = "flex";
-  // document.getElementById("pop-up-card").style.display = "flex";
+
   document.getElementById("menu").style.display = "flex";
 
   document.querySelector(".form").style.display = "none";
   controls.style.display = "flex";
 });
-// ==========================================
-// open social menu
+// ==============================================================
+
+// 9.open social menu
 controls.addEventListener("click", function (e) {
   console.log("first");
   e.preventDefault();
   socialMenu.classList = "social-menu";
   controls.classList.toggle("active");
   if (controls.classList.contains("active")) {
-    // socialMenu.classList.add("animate__animated");
-    // socialMenu.classList.add("animate__backInDown");
     socialMenu.style.display = "block";
     mail.style.display = "none";
   } else {
-    // socialMenu.classList.add("animate__animated");
-    // socialMenu.classList.add("animate__backOutDown");
     mail.style.display = "flex";
     socialMenu.style.display = "none";
   }
 });
-//h=========================================
-// open & close modal
+
+//====================================================================
+// 10.open & close modal for (pdf and video)
+
+// close modal and reset iframes
 closeModal.addEventListener("click", function (e) {
   e.preventDefault();
   modal.style.display = "none";
@@ -215,27 +218,27 @@ closeModal.addEventListener("click", function (e) {
   vidFrame.setAttribute("src", "");
   pdfFrame.setAttribute("src", "");
 });
-
+// open iframe
 [...popUpBtn].map((btn) => {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
+    //  chech what typeof button for
+    // /video type
     if (btn.classList.contains("pop-up-btn-video")) {
       modal.style.display = "flex";
       modelContentVideo.style.display = "block";
       let iframePath = btn.getAttribute("data-link");
       vidFrame.setAttribute("src", iframePath);
-
-      console.log("vid");
-      console.log(iframePath);
     }
+    // / pdf type
     if (btn.classList.contains("pop-up-btn-pdf")) {
-      console.log("psdf");
       modal.style.display = "flex";
       modelContentPdf.style.display = "block";
       let iframePath = btn.getAttribute("data-link");
       pdfFrame.setAttribute("src", iframePath);
     }
+    // / redirct type
     if (btn.classList.contains("pop-up-btn-redirect")) {
       let pagePath = btn.getAttribute("data-link");
       location.pathname = location.pathname.concat(pagePath);
@@ -243,26 +246,26 @@ closeModal.addEventListener("click", function (e) {
   });
 });
 
-//===============================
+//======================================================================
 
-// go to whatsapp page contact
+// 11. go to whatsapp page contact
 
 whatsappIcon.addEventListener("click", function (e) {
   e.preventDefault();
   window.open("https://api.whatsapp.com/send/?phone=966920019711");
 });
 
-//=================================
+//========================================================================
 
-// hide over lay
+// 12. hide over lay (all info on map)
 hideOverLay.addEventListener("click", function (e) {
   e.preventDefault();
   overLay.classList.toggle("hide");
 });
 
-//===================================
+//=========================================================================
 
-// full screen mode
+// 13. full screen mode
 let isFullscreen = false;
 
 // Function to toggle fullscreen mode
@@ -300,3 +303,14 @@ function toggleFullscreen() {
 
 // Button click event listener
 fullScreen.addEventListener("click", toggleFullscreen);
+//==============================================================================
+
+// helper functions
+
+// remove all popups
+function closeAllContent() {
+  let allContent = document.querySelectorAll(".pop-up-content");
+  [...allContent].map((elem) => {
+    elem.style.display = "none";
+  });
+}
