@@ -1,4 +1,6 @@
-const { src, dest, series, watch } = require("gulp");
+const { src, dest, series, watch, gulp } = require("gulp");
+const uglify = require("gulp-uglify");
+const htmlMin = require("gulp-htmlmin");
 
 // styles
 const scss = require("gulp-sass")(require("sass"));
@@ -17,17 +19,26 @@ function styles() {
 // scripts
 const jsMinify = require("gulp-terser");
 
+// function scripts() {
+//   return src("./front/assets/js/**/*.js")
+//     .pipe(jsMinify())
+//     .pipe(dest("./front/dist/scripts/"));
+// }
 function scripts() {
   return src("./front/assets/js/**/*.js")
-    .pipe(jsMinify())
+    .pipe(uglify())
     .pipe(dest("./front/dist/scripts/"));
 }
-
+function html() {
+  return src("./front/*.html")
+    .pipe(htmlMin({ collapseWhitespace: true }))
+    .pipe(dest("./front/dist/"));
+}
 function watchTask() {
   watch(
-    ["./front/scss/**/*.scss", "./front/assets/js/**/*.js"],
-    series(styles, scripts)
+    ["./front/scss/**/*.scss", "./front/assets/js/**/*.js", "./front/*.html"],
+    series(styles, scripts, html)
   );
 }
 
-exports.default = series(styles, scripts, watchTask);
+exports.default = series(styles, scripts, html, watchTask);

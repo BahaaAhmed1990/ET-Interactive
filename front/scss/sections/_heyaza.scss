@@ -1,3 +1,4 @@
+// @use "../components/global" as *;
 @import "../components/mediaqeries";
 body {
   width: 100vw;
@@ -185,6 +186,22 @@ body {
     }
   }
 
+  // main page-link
+  .main-page-link {
+    position: fixed;
+    left: 0;
+    bottom: 2%;
+    background-color: $bg-primary;
+    border-radius: 0px 10px 10px 0px;
+    z-index: 6;
+    a {
+      text-decoration: none;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      display: inline-block;
+    }
+  }
   //main
   main {
     height: 100%;

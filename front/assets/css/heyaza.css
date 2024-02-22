@@ -234,6 +234,21 @@ body #modal .modal-content .project-profile .publuuflip {
     margin: 0;
   }
 }
+body .main-page-link {
+  position: fixed;
+  left: 0;
+  bottom: 2%;
+  background-color: rgba(1, 4, 15, 0.8);
+  border-radius: 0px 10px 10px 0px;
+  z-index: 6;
+}
+body .main-page-link a {
+  text-decoration: none;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  display: inline-block;
+}
 body main {
   height: 100%;
   margin: 0;
