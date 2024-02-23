@@ -3,12 +3,22 @@ const clientName = document.querySelector("#name");
 const firmName = document.querySelector("#firm-name");
 const phone = document.querySelector("#phone-number");
 const email = document.querySelector("#email");
+const customerType = document.querySelector("#customer-type");
+const companyName = document.querySelector("#company-name");
+const companyDiv = document.querySelector("#organization");
 
-// const success = document.querySelector(".alert-success");
-// const warn = document.querySelector(".alert-warning");
-
-// success.style.display = "none";
-// warn.style.display = "none";
+customerType.addEventListener("change", function (e) {
+  console.log(typeof customerType.value);
+  e.preventDefault();
+  if (customerType.value) {
+    companyName.removeAttribute("disabled");
+    companyDiv.classList.remove("hide");
+  }
+  if (customerType.value === "" || customerType.value === "indivdual") {
+    companyName.setAttribute("disabled", "true");
+    companyDiv.classList.add("hide");
+  }
+});
 
 btn.addEventListener("click", handleSubmit);
 
@@ -18,8 +28,10 @@ function handleSubmit(e) {
   let entity = firmName.value;
   let mail = email.value;
   let phoneNum = phone.value;
+  let type = customerType.value;
+  let company = companyName.value;
 
-  console.log(name, entity, mail, phoneNum);
+  console.log(name, entity, mail, phoneNum, type, company);
 
   let msgBody = {};
 
@@ -29,10 +41,6 @@ function handleSubmit(e) {
     : (msgBody.entityName = "No entity name");
 
   if (!mail || !phoneNum) {
-    // warn.style.display = "block";
-    // setTimeout(() => {
-    //   warn.style.display = "none";
-    // }, 3000);
     console.log("wrong input");
     return;
   } else {
@@ -40,6 +48,9 @@ function handleSubmit(e) {
     msgBody.phone = phoneNum;
   }
 
+  type ? (msgBody.type = type) : (msgBody.type = "indvidual");
+
+  company ? (msgBody.company = company) : (msgBody.company = "N/A");
   console.log(msgBody);
 
   axios({
@@ -52,16 +63,8 @@ function handleSubmit(e) {
   }).then(function (res) {
     if (res.status === 201) {
       console.log("msg sent");
-      // success.style.display = "block";
-      // setTimeout(() => {
-      //   success.style.display = "none";
-      // }, 3000);
     } else {
       console.log("msg didnot send");
-      // warn.style.display = "block";
-      // setTimeout(() => {
-      //   warn.style.display = "none";
-      // }, 3000);
     }
   });
 }

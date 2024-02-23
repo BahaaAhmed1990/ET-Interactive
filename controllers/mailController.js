@@ -2,8 +2,8 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const sendMail = (req, res) => {
-  const { name, entityName, email, phone } = req.body;
-  console.log(name, entityName, email, phone);
+  const { name, entityName, email, phone, type, company } = req.body;
+  console.log(name, entityName, email, phone, type, company);
 
   let config = {
     service: "gmail",
@@ -16,14 +16,15 @@ const sendMail = (req, res) => {
   let transporter = nodemailer.createTransport(config);
   let message = {
     from: process.env.EMAIL,
-    to: "Info@heyazah.com",
+    to: ["Info@heyazah.com", "bahaaahmed19902012@gmail.com"],
     subject: "Place Order",
     html: `<b>Hello world?</b><br />
     ${name}<br/>
     ${entityName}<br/>
     ${phone}<br/>
     ${email}<br/>
-    
+    ${type}<br />
+    ${company}<br />
     `,
   };
 
