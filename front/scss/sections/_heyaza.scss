@@ -191,6 +191,8 @@ body {
     position: fixed;
     left: 0;
     bottom: 2%;
+    display: flex;
+    align-items: center;
     background-color: $bg-primary;
     border-radius: 0px 10px 10px 0px;
     z-index: 6;
@@ -198,8 +200,12 @@ body {
       text-decoration: none;
       font-family: sans-serif;
       text-transform: uppercase;
-      padding: 10px 15px;
+      padding: 10px 5px;
+      font-size: 12px;
       display: inline-block;
+    }
+    svg {
+      transform: rotateZ(180deg);
     }
   }
   //main
