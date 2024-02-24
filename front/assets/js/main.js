@@ -17,7 +17,7 @@
 //helper functions (clear all pop ups)
 
 console.log("main.js");
-
+let slideIndex = 1;
 // 1 . calling elements form the dom
 const img2d = document.querySelector("#image-2d");
 const wave = document.querySelector("#SIGMA");
@@ -58,6 +58,9 @@ const overLay = document.querySelector(".over-lay");
 const hideOverLay = document.querySelector("#hide-overlay");
 
 const fullScreen = document.querySelector("#full-screen");
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
 //================================================================
 
@@ -227,9 +230,11 @@ closeModal.addEventListener("click", function (e) {
     // /video type
     if (btn.classList.contains("pop-up-btn-video")) {
       modal.style.display = "flex";
-      modelContentVideo.style.display = "block";
+      modelContentVideo.style.display = "flex";
       let iframePath = btn.getAttribute("data-link");
+      let projectName = btn.getAttribute("data-project");
       vidFrame.setAttribute("src", iframePath);
+      loadImgs(projectName);
     }
     // / pdf type
     if (btn.classList.contains("pop-up-btn-pdf")) {
@@ -246,6 +251,74 @@ closeModal.addEventListener("click", function (e) {
   });
 });
 
+const projectsMatrix = { gate: 5, lex: 9 };
+
+// load images of project
+function loadImgs(name) {
+  let loadedImages = 0;
+
+  for (let i = 1; i <= projectsMatrix[name]; i++) {
+    //create the image
+    const image = document.createElement("img");
+    image.src = `./assets/images/gate/${i}.jpg`;
+    image.alt = `${name}`;
+    image.classList.add("mySlides", "fade");
+    loadedImages++;
+    image.onload = handleImageLoaded;
+
+    // add image after video iframe
+    vidFrame.insertAdjacentElement("afterend", image);
+  }
+
+  function handleImageLoaded() {
+    console.log("imag load");
+    if (loadedImages === projectsMatrix[name]) {
+      console.log("all imgs loaded");
+      nextBtn.classList.remove("hide");
+      prevBtn.classList.remove("hide");
+      showSlides(1);
+    }
+  }
+}
+
+// show specific slide function
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  console.log(slides);
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+}
+function stopVideo() {
+  const player = new Vimeo.Player(vidFrame);
+
+  // Pause the video
+  player.pause();
+}
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+nextBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  plusSlides(1);
+  stopVideo();
+});
+prevBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  plusSlides(-1);
+  stopVideo();
+});
 //======================================================================
 
 // 11. go to whatsapp page contact
